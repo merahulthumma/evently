@@ -8,8 +8,8 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
-// import NavItems from "./NavItems";
-// import MobileNav from "./MobileNav";
+import MobileNav from "./MobileNav";
+import NavItems from "./NavItems";
 
 const Header = () => {
   return (
@@ -25,16 +25,18 @@ const Header = () => {
         </Link>
 
         <SignedIn>
-          <nav className="md:flex-between hidden w-full max-w-xs">NavItems</nav>
+          <nav className="md:flex-between hidden w-full max-w-xs">
+            <NavItems />{" "}
+          </nav>
         </SignedIn>
 
         <div className="flex w-32 justify-end gap-3">
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
-            MobileNav
+            <MobileNav />
           </SignedIn>
           <SignedOut>
-            <SignInButton mode="modal">
+            <SignInButton>
               <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
                 Login
               </Button>
